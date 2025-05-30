@@ -41,34 +41,39 @@ onMounted(() => {
 
   <!-- Mobile Content -->
   <div v-else>
-    <div style="position: relative; margin-bottom: 51px;">
+    <div style="position: relative; margin-bottom: 47px;">
       <img src="./assets/images/main-image.svg" alt="main image" class="main-image" width="100%" />
       <h1 class="title">Ghina <span style="font-family: Dosis; font-weight: 400;">&</span> Maytham</h1>
-      <h3 class="subtitle">We're getting engaged<span style="font-family: Andada Pro ;">!</span></h3>
+      <h3 class="subtitle">We<span style="font-family: sans-serif">'</span>re getting engaged<span
+          style="font-family: Andada Pro ;">!</span></h3>
     </div>
     <h3 class="join-us">Join us for a celebration of love<span style="font-family: Adamina;">,</span> laughter<span
         style="font-family: Adamina;">,</span> and the
       start of forever <span class="heart-style">b</span></h3>
 
-    <h1 class="title2" style="color: black;">In the Little Things</h1>
+    <div>
+      <h1 class="title2" style="color: black;">In the Little Things</h1>
+    </div>
     <div class="container1">
+
       <img src="./assets/images/PRINT.svg" alt="print image" class="print-img" />
       <img src="./assets/images/coffee.svg" alt="heart image" class="coffee-img" />
       <img src="./assets/images/beach.svg" alt="heart image" class="beach-img" />
       <!-- <img src="./assets/images/story.jpg" class="story-img" /> -->
-      <p class="story-text">From coffee dates to quiet sunsets, our love grew in the little moments <span
-          class="small-heart">I</span></p>
+      <p class="story-text">From coffee dates to quiet sunsets<span style="font-family: Adamina;">,</span> our love grew
+        in the little moments <span class="small-heart">I</span></p>
     </div>
-    <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;position: relative;">
+    <div
+      style="display: flex;flex-direction: column;justify-content: center;align-items: center;position: relative;margin-bottom: 50px;">
       <img src="./assets/images/PRINT2.svg" alt="heart image" class="print2" />
       <h1 class="title2">Date <span style="text-transform: lowercase;">and</span> Place</h1>
-      <img src="./assets/images/calendar.svg" class="Calender" style="width: 95%;" />
+      <img src="./assets/images/cal.svg" class="Calender" style="width: 95%;" />
 
     </div>
 
     <div class="timeContainer">
-      <h1 class="time">Hit the map and we'll see you there <span style="text-transform: lowercase;">at</span> <span
-          style="font-family: El Messiri;">8:00</span> PM</h1>
+      <h1 class="time">Hit the map and we<span style="font-family: sans-serif">'</span>ll see you there <span
+          style="text-transform: lowercase;">at</span> <span style="font-family: El Messiri;">8:00</span> PM</h1>
       <a href="https://maps.app.goo.gl/1spxXDfXs6Ua9RMc9?g_st=ic"><img src="./assets/images/maps.svg"
           class="maps-img" /></a>
     </div>
@@ -80,15 +85,18 @@ onMounted(() => {
     <p class="textt">Ladies<span style="font-family: Adamina;">,</span> think pastels<span
         style="font-family: Adamina;">,</span> creams<span style="font-family: Adamina;">,</span> florals<span
         style="font-family: Adamina;">,</span> and flowy things<span style="font-family: Adamina;">.</span></p>
-    <p class="textt">And Gentlemen… black. Just black. You're welcome<span
-        style="font-family: Andada Pro ;">!</span><img src="./assets/images/shirt.svg" class="heartz" /></p>
+    <p class="textt">And Gentlemen… black<span style="font-family: Adamina;">.</span> Just black<span
+        style="font-family: Adamina;">.</span> You<span style="font-family: sans-serif">'</span><span
+        style="text-transform: lowercase;">re</span> welcome<span style="font-family: Andada Pro ;">!</span><img
+        src="./assets/images/shirt.svg" class="heartz" /></p>
 
     <div style="position: relative;margin-top: 50px;">
       <img src="./assets/images/us.svg" width="100%" />
       <div class="footer-text">
         <h3 class="footer-t" style="color: white;">Come for the love<span style="font-family: Adamina;">,</span> stay
           for
-          the party<span style="font-family: Andada Pro ;">!</span> We can't wait to dance<span
+          the party<span style="font-family: Andada Pro ;">!</span> We can<span
+            style="font-family: sans-serif">'</span><span style="text-transform: lowercase;">t</span> wait to dance<span
             style="font-family: Adamina;">,</span>
           laugh<span style="font-family: Adamina;">,</span> and celebrate with you <span class="heart-style">b</span>
         </h3>
@@ -109,6 +117,12 @@ onMounted(() => {
   padding: 20px;
 }
 
+.dress-img {
+  position: absolute;
+  left: 40px;
+
+}
+
 .story-text {
   color: #1F1F1F;
 
@@ -120,7 +134,7 @@ onMounted(() => {
   width: 175px;
   height: 72px;
   position: absolute;
-  top: 10%;
+  top: 12%;
   right: 30px;
 
 }
@@ -226,6 +240,7 @@ onMounted(() => {
   position: absolute;
   top: 20px;
   left: 0;
+  z-index: -1;
   height: auto;
 }
 
@@ -281,7 +296,7 @@ onMounted(() => {
   line-height: normal;
   text-transform: capitalize;
   text-align: center;
-  margin: 0 30px;
+  margin: 0 20px;
 }
 
 .textt {
@@ -290,18 +305,20 @@ onMounted(() => {
   text-align: center;
   font-family: "Orliet Pro";
   font-size: 16px;
+  letter-spacing: -0.32px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 0px;
   text-transform: capitalize;
 }
 
 .dressContainer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin-top: 65px;
+  /* margin-bottom: 20px; */
 }
 
 .dressContainer h1 {
@@ -318,7 +335,7 @@ onMounted(() => {
 
 .maps-img {
   position: absolute;
-  top: -50%;
+  top: -60%;
   /* left: 50%; */
   /* transform: translate(-50%, -50%); */
   right: 30px;
@@ -378,7 +395,7 @@ onMounted(() => {
 
 .title {
   position: absolute;
-  top: 34px;
+  top: 13px;
   left: 50%;
   font-family: "Orliet Pro";
   transform: translateX(-50%);
@@ -387,6 +404,7 @@ onMounted(() => {
   color: white;
   width: 100%;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .title2 {
@@ -396,7 +414,7 @@ onMounted(() => {
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 0;
+  /* line-height: 0; */
   text-transform: uppercase;
   width: 100%;
   text-align: center;
@@ -408,7 +426,7 @@ onMounted(() => {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 0;
   text-transform: uppercase;
   position: absolute;
   bottom: 20px;
@@ -425,7 +443,7 @@ onMounted(() => {
   font-family: "Orliet Pro";
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
   text-transform: capitalize;
   align-items: center;

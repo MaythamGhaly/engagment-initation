@@ -1,61 +1,186 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 
+const isMobile = ref(false)
+
+onMounted(() => {
+  // Check if device is mobile based on screen width and user agent
+  const checkMobile = () => {
+    const width = window.innerWidth
+    const userAgent = navigator.userAgent.toLowerCase()
+    const mobileKeywords = ['mobile', 'android', 'iphone', 'ipad', 'tablet']
+
+    return width <= 768 || mobileKeywords.some(keyword => userAgent.includes(keyword))
+  }
+
+  isMobile.value = checkMobile()
+
+  // Listen for window resize to handle orientation changes
+  window.addEventListener('resize', () => {
+    isMobile.value = checkMobile()
+  })
+})
 </script>
 
 <template>
-  <div style="position: relative; margin-bottom: 51px;">
-    <img src="./assets/images/main-image.svg" alt="main image" class="main-image" width="100%" />
-    <h1 class="title">Ghina <span style="font-family: Dosis; font-weight: 400;">&</span> Maytham</h1>
-    <h3 class="subtitle">We’re getting engaged<span style="font-family: Andada Pro ;">!</span></h3>
-  </div>
-  <h3 class="join-us">Join us for a celebration of love<span style="font-family: Adamina;">,</span> laughter<span
-      style="font-family: Adamina;">,</span> and the
-    start of forever <span class="heart-style">b</span></h3>
-
-  <h1 class="title2" style="color: black;">In the Little Things</h1>
-  <div class="container1">
-    <img src="./assets/images/PRINT.svg" alt="print image" class="print-img" />
-    <img src="./assets/images/coffee.svg" alt="heart image" class="coffee-img" />
-    <img src="./assets/images/beach.svg" alt="heart image" class="beach-img" />
-    <img src="./assets/images/story.jpg" class="story-img" />
-  </div>
-  <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;position: relative;">
-    <img src="./assets/images/PRINT2.svg" alt="heart image" class="print2" />
-    <h1 class="title2">Date <span style="text-transform: lowercase;">and</span> Place</h1>
-    <img src="./assets/images/calendar.svg" class="Calender" style="width: 95%;" />
-
+  <!-- Desktop Only Message -->
+  <div v-if="!isMobile" class="desktop-only-container">
+    <div class="desktop-message">
+      <h1 class="desktop-title">📱 Oops! This invitation is mobile-exclusive! 📱</h1>
+      <div class="phone-emoji">📱</div>
+      <p class="desktop-text">
+        This magical wedding invitation was crafted specifically for your phone!
+        <br><br>
+        🎭 <em>Please grab your mobile device and open this link there for the full enchanting experience!</em>
+        <br><br>
+        Trust us, it's worth the extra step! ✨
+      </p>
+      <div class="hearts">💕 💍 💕</div>
+    </div>
   </div>
 
-  <div class="timeContainer">
-    <h1 class="time">Hit the map and we’ll see you there <span style="text-transform: lowercase;">at</span> <span
-        style="font-family: El Messiri;">8:00</span> PM</h1>
-    <a href="https://maps.app.goo.gl/1spxXDfXs6Ua9RMc9?g_st=ic"><img src="./assets/images/maps.svg"
-        class="maps-img" /></a>
-  </div>
+  <!-- Mobile Content -->
+  <div v-else>
+    <div style="position: relative; margin-bottom: 51px;">
+      <img src="./assets/images/main-image.svg" alt="main image" class="main-image" width="100%" />
+      <h1 class="title">Ghina <span style="font-family: Dosis; font-weight: 400;">&</span> Maytham</h1>
+      <h3 class="subtitle">We're getting engaged<span style="font-family: Andada Pro ;">!</span></h3>
+    </div>
+    <h3 class="join-us">Join us for a celebration of love<span style="font-family: Adamina;">,</span> laughter<span
+        style="font-family: Adamina;">,</span> and the
+      start of forever <span class="heart-style">b</span></h3>
 
-  <div class="dressContainer">
-    <img src="./assets/images/dress.svg" class="dress-img" />
-    <h1 class="title2">Dress the Vibe</h1>
-  </div>
-  <p class="textt">Ladies<span style="font-family: Adamina;">,</span> think pastels<span
-      style="font-family: Adamina;">,</span> creams<span style="font-family: Adamina;">,</span> florals<span
-      style="font-family: Adamina;">,</span> and flowy things<span style="font-family: Adamina;">.</span></p>
-  <p class="textt">And Gentlemen… black. Just black. You're welcome<span style="font-family: Andada Pro ;">!</span><img
-      src="./assets/images/shirt.svg" class="heartz" /></p>
+    <h1 class="title2" style="color: black;">In the Little Things</h1>
+    <div class="container1">
+      <img src="./assets/images/PRINT.svg" alt="print image" class="print-img" />
+      <img src="./assets/images/coffee.svg" alt="heart image" class="coffee-img" />
+      <img src="./assets/images/beach.svg" alt="heart image" class="beach-img" />
+      <img src="./assets/images/story.jpg" class="story-img" />
+    </div>
+    <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;position: relative;">
+      <img src="./assets/images/PRINT2.svg" alt="heart image" class="print2" />
+      <h1 class="title2">Date <span style="text-transform: lowercase;">and</span> Place</h1>
+      <img src="./assets/images/calendar.svg" class="Calender" style="width: 95%;" />
 
-  <div style="position: relative;margin-top: 50px;">
-    <img src="./assets/images/us.svg" width="100%" />
-    <div class="footer-text">
-      <h3 class="footer-t" style="color: white;">Come for the love<span style="font-family: Adamina;">,</span> stay for
-        the party<span style="font-family: Andada Pro ;">!</span> We can’t wait to dance<span
-          style="font-family: Adamina;">,</span>
-        laugh<span style="font-family: Adamina;">,</span> and celebrate with you <span class="heart-style">b</span></h3>
+    </div>
 
+    <div class="timeContainer">
+      <h1 class="time">Hit the map and we'll see you there <span style="text-transform: lowercase;">at</span> <span
+          style="font-family: El Messiri;">8:00</span> PM</h1>
+      <a href="https://maps.app.goo.gl/1spxXDfXs6Ua9RMc9?g_st=ic"><img src="./assets/images/maps.svg"
+          class="maps-img" /></a>
+    </div>
+
+    <div class="dressContainer">
+      <img src="./assets/images/dress.svg" class="dress-img" />
+      <h1 class="title2">Dress the Vibe</h1>
+    </div>
+    <p class="textt">Ladies<span style="font-family: Adamina;">,</span> think pastels<span
+        style="font-family: Adamina;">,</span> creams<span style="font-family: Adamina;">,</span> florals<span
+        style="font-family: Adamina;">,</span> and flowy things<span style="font-family: Adamina;">.</span></p>
+    <p class="textt">And Gentlemen… black. Just black. You're welcome<span
+        style="font-family: Andada Pro ;">!</span><img src="./assets/images/shirt.svg" class="heartz" /></p>
+
+    <div style="position: relative;margin-top: 50px;">
+      <img src="./assets/images/us.svg" width="100%" />
+      <div class="footer-text">
+        <h3 class="footer-t" style="color: white;">Come for the love<span style="font-family: Adamina;">,</span> stay
+          for
+          the party<span style="font-family: Andada Pro ;">!</span> We can't wait to dance<span
+            style="font-family: Adamina;">,</span>
+          laugh<span style="font-family: Adamina;">,</span> and celebrate with you <span class="heart-style">b</span>
+        </h3>
+
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* Desktop Only Styles */
+.desktop-only-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+  padding: 20px;
+}
+
+.desktop-message {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.desktop-title {
+  color: #B700FF;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.phone-emoji {
+  font-size: 4rem;
+  margin: 20px 0;
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.desktop-text {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 30px 0;
+}
+
+.hearts {
+  font-size: 2rem;
+  margin-top: 30px;
+  opacity: 0.8;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Original Mobile Styles */
 .comeForThe {
   font-family: 'Orliet Pro';
 }

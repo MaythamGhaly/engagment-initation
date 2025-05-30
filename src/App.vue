@@ -29,7 +29,7 @@ onMounted(() => {
       <h1 class="desktop-title">📱 Oops! This invitation is mobile-exclusive! 📱</h1>
       <div class="phone-emoji">📱</div>
       <p class="desktop-text">
-        This magical wedding invitation was crafted specifically for your phone!
+        This magical engagment invitation was crafted specifically for your phone!
         <br><br>
         🎭 <em>Please grab your mobile device and open this link there for the full enchanting experience!</em>
         <br><br>

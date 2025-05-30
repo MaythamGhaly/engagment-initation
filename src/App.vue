@@ -55,7 +55,9 @@ onMounted(() => {
       <img src="./assets/images/PRINT.svg" alt="print image" class="print-img" />
       <img src="./assets/images/coffee.svg" alt="heart image" class="coffee-img" />
       <img src="./assets/images/beach.svg" alt="heart image" class="beach-img" />
-      <img src="./assets/images/story.jpg" class="story-img" />
+      <!-- <img src="./assets/images/story.jpg" class="story-img" /> -->
+      <p class="story-text">From coffee dates to quiet sunsets, our love grew in the little moments <span
+          class="small-heart">I</span></p>
     </div>
     <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;position: relative;">
       <img src="./assets/images/PRINT2.svg" alt="heart image" class="print2" />
@@ -105,6 +107,31 @@ onMounted(() => {
   align-items: center;
   background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
   padding: 20px;
+}
+
+.story-text {
+  color: #1F1F1F;
+
+  font-family: "Orliet Pro";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 175px;
+  height: 72px;
+  position: absolute;
+  top: 10%;
+  right: 30px;
+
+}
+
+.small-heart {
+  color: #1F1F1F;
+  font-family: BonusHearts;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .desktop-message {

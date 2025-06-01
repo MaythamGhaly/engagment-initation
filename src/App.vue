@@ -74,7 +74,7 @@ onMounted(() => {
     <div class="timeContainer">
       <h1 class="time">Hit the map and we<span style="font-family: sans-serif">'</span>ll see you there <span
           style="text-transform: lowercase;">at</span> <span style="font-family: El Messiri;">8:00</span> PM</h1>
-      <a href="https://maps.app.goo.gl/1spxXDfXs6Ua9RMc9?g_st=ic"><img src="./assets/images/maps.svg"
+      <a href="https://maps.app.goo.gl/ehmJDq9sprbEEErn8"><img src="./assets/images/new-maps.svg"
           class="maps-img" /></a>
     </div>
 
@@ -317,6 +317,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 25px;
   margin-top: 75px;
   /* margin-bottom: 20px; */
 }
@@ -335,7 +336,7 @@ onMounted(() => {
 
 .maps-img {
   position: absolute;
-  top: -60%;
+  top: -68%;
   /* left: 50%; */
   /* transform: translate(-50%, -50%); */
   right: 30px;

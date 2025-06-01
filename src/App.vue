@@ -274,6 +274,7 @@ onMounted(() => {
   height: auto;
   min-height: 350px;
   margin-bottom: 20px;
+  margin-top: -10px;
   margin-bottom: 52px;
 }
 
